@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: transaction-table
+      author: Taleh Gurbanzade
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_tr_id
+                  name: id
+                  type: varchar(50)
+              - column:
+                  name: customer_id
+                  type: varchar(30)
+              - column:
+                  name: currency
+                  type: varchar(3)
+              - column:
+                  name: amount
+                  type: decimal
+              - column:
+                  name: sender_iban
+                  type: varchar(50)
+              - column:
+                  name: receiver_iban
+                  type: varchar(50)
+              - column:
+                  name: sender_first_name
+                  type: varchar(30)
+              - column:
+                  name: sender_last_name
+                  type: varchar(30)
+              - column:
+                  name: receiver_first_name
+                  type: varchar(30)
+              - column:
+                  name: receiver_last_name
+                  type: varchar(30)
+              - column:
+                  name: status
+                  type: varchar(10)
+              - column:
+                  name: error
+                  type: text
+              - column:
+                  name: created
+                  type: datetime
+              - column:
+                  name: updated
+                  type: datetime
+            tableName: transaction

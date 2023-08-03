@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: rate-table
+      author: Taleh Gurbanzade
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_r_id
+                  name: id
+                  type: bigint
+              - column:
+                  name: source_currency
+                  type: varchar(3)
+              - column:
+                  name: destination_currency
+                  type: varchar(3)
+              - column:
+                  name: rate
+                  type: decimal
+            tableName: rate

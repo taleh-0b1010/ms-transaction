@@ -1,0 +1,9 @@
+logging:
+  level:
+    root: INFO
+    org.springframework: ERROR
+    com.pocopay.transaction: DEBUG
+
+spring:
+  application:
+    name: ms-transaction

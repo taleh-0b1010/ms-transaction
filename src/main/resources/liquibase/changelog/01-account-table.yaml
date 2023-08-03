@@ -1,0 +1,42 @@
+databaseChangeLog:
+  - changeSet:
+      id: account-table
+      author: Taleh Gurbanzade
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    primaryKeyName: pk_acc_id
+                  name: id
+                  type: bigint
+              - column:
+                  name: iban
+                  type: varchar(50)
+              - column:
+                  name: account_number
+                  type: bigint
+              - column:
+                  name: currency
+                  type: varchar(3)
+              - column:
+                  name: balance
+                  type: decimal
+              - column:
+                  name: available_balance
+                  type: decimal
+              - column:
+                  name: customer_id
+                  type: varchar(30)
+              - column:
+                  name: block_in
+                  type: boolean
+              - column:
+                  name: block_out
+                  type: boolean
+              - column:
+                  name: closed
+                  type: boolean
+            tableName: account
