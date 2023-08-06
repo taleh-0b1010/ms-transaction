@@ -2,7 +2,8 @@ package com.pocopay.transaction.model;
 
 public enum TransactionStatus {
 
-    SUCCESS,
-    REJECT,
-    IN_PROGRESS
+    SUCCEEDED,
+    REJECTED,
+    IN_PROGRESS,
+    CREATED
 }

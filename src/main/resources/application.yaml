@@ -7,3 +7,14 @@ logging:
 spring:
   application:
     name: ms-transaction
+  data:
+    mongodb:
+      uri: mongodb://admin:password@localhost:27017/gw_visa?authSource=admin
+  rabbitmq:
+    virtual-host: /
+    host: localhost
+    port: 5672
+    username: admin
+    password: admin
+    queue:
+      transaction: transaction

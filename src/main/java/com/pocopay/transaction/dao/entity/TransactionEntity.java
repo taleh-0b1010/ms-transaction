@@ -1,9 +1,12 @@
 package com.pocopay.transaction.dao.entity;
 
 import com.pocopay.transaction.model.TransactionStatus;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,12 +14,15 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Data
+@Entity
 @Table(name = "transaction")
+@AllArgsConstructor
+@NoArgsConstructor
 public class TransactionEntity {
 
     @Id
     private String id;
-    private String customerId;
+    private String cif;
     private String currency;
     private BigDecimal amount;
     private String senderIban;
