@@ -27,7 +27,7 @@ public class AccountService {
                 })
                 .ifPresentOrElse(
                         entity -> blockAvailableBalance(entity, transactionAmount),
-                        () -> { throw new NotFoundException("Sender account not found by customerId and iban"); });
+                        () -> { throw new NotFoundException("Sender account not found by customerId, iban and currency"); });
     }
 
     private void checkBlock(Boolean block, String s) {

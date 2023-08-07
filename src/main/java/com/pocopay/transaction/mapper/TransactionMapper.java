@@ -5,14 +5,19 @@ import com.pocopay.transaction.model.CreateTransactionRequestDto;
 import com.pocopay.transaction.model.TransactionDto;
 import com.pocopay.transaction.model.TransactionStatus;
 import org.mapstruct.AfterMapping;
+import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.ReportingPolicy;
 
 import java.util.UUID;
 
 @Mapper(
-        componentModel = "spring"
+        componentModel = "spring",
+        injectionStrategy = InjectionStrategy.CONSTRUCTOR,
+        unmappedTargetPolicy = ReportingPolicy.IGNORE,
+        unmappedSourcePolicy = ReportingPolicy.IGNORE
 )
 public interface TransactionMapper {
 
@@ -28,7 +33,7 @@ public interface TransactionMapper {
     TransactionEntity toTransactionEntity(CreateTransactionRequestDto requestDto);
 
     @AfterMapping
-    default void afterMapping(@MappingTarget TransactionEntity entity, CreateTransactionRequestDto requestDto) {
+    default void afterMapping(@MappingTarget TransactionEntity entity) {
         entity.setId(UUID.randomUUID().toString());
         entity.setStatus(TransactionStatus.INITIATED);
     }
