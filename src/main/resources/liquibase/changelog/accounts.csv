@@ -1,0 +1,5 @@
+id;iban;account_number;currency;balance;available_balance;cif;block_in;block_out;name
+1;EE11111111;111111;EUR;100;100;0001;false;false;salary
+2;EE22222222;222222;USD;150;130;0002;false;false;salary
+3;EE33333333;333333;GBP;180;170;0003;false;false;credit
+4;EE44444444;444444;GBP;300;100;0004;false;true;credit

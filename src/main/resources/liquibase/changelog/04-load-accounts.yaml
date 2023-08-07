@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: load-accounts
+      author: Taleh Gurbanzade
+      changes:
+        - loadData:
+            file: liquibase/changelog/accounts.csv
+            schemaName: public
+            separator: ;
+            tableName: account

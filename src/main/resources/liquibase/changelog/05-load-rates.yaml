@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: load-rates
+      author: Taleh Gurbanzade
+      changes:
+        - loadData:
+            file: liquibase/changelog/rates.csv
+            schemaName: public
+            separator: ;
+            tableName: rate

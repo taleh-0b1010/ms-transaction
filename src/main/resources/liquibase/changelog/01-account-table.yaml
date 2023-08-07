@@ -28,7 +28,7 @@ databaseChangeLog:
                   name: available_balance
                   type: decimal
               - column:
-                  name: customer_id
+                  name: cif
                   type: varchar(30)
               - column:
                   name: block_in

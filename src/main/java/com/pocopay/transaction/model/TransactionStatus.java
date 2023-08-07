@@ -5,5 +5,5 @@ public enum TransactionStatus {
     SUCCEEDED,
     REJECTED,
     IN_PROGRESS,
-    CREATED
+    INITIATED
 }

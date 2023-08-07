@@ -1,0 +1,7 @@
+id;source_currency;destination_currency;rate
+1;EUR;USD;1.1
+2;USD;EUR;0.91
+3;EUR;GBP;0.86
+4;GBP;EUR;1.16
+5;USD;GBP;0.78
+6;GBP;USD;1.28

@@ -1,5 +1,6 @@
 package com.pocopay.transaction.queue;
 
+import com.pocopay.transaction.dao.entity.TransactionEntity;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -17,7 +18,7 @@ public class MessageSender {
         this.template = template;
     }
 
-    public void sendTransaction(String transactionId) {
-        template.convertAndSend(transactionQueue.getName(), transactionId);
+    public void sendTransactionToQueue(TransactionEntity entity) {
+        template.convertAndSend(transactionQueue.getName(), entity);
     }
 }

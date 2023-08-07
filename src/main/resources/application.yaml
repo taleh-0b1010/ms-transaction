@@ -7,9 +7,14 @@ logging:
 spring:
   application:
     name: ms-transaction
-  data:
-    mongodb:
-      uri: mongodb://admin:password@localhost:27017/gw_visa?authSource=admin
+  datasource:
+    url: jdbc:postgresql://localhost:5432/transaction_db
+    username: postgres
+    password: 123456
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+  liquibase:
+    change-log: classpath:liquibase/changelog-master.yaml
   rabbitmq:
     virtual-host: /
     host: localhost
@@ -18,3 +23,5 @@ spring:
     password: admin
     queue:
       transaction: transaction
+server:
+  port: 2020
