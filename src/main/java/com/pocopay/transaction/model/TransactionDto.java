@@ -1,26 +1,20 @@
 package com.pocopay.transaction.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import lombok.EqualsAndHashCode;
 import java.math.BigDecimal;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class TransactionDto {
-
-    private String id;
-    private String cif;
-    private String currency;
-    private BigDecimal amount;
-    private String senderIban;
-    private String receiverIban;
-    private String senderFirstName;
-    private String senderLastName;
-    private String receiverFirstName;
-    private String receiverLastName;
-    private TransactionStatus status;
-    private String error;
+public record TransactionDto(
+        String id,
+        String cif,
+        String currency,
+        BigDecimal amount,
+        String senderIban,
+        String receiverIban,
+        String senderFirstName,
+        String senderLastName,
+        String receiverFirstName,
+        String receiverLastName,
+        TransactionStatus status,
+        String error
+) {
 }

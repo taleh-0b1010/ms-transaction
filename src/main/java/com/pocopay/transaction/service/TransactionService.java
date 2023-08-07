@@ -36,7 +36,7 @@ public class TransactionService {
     }
 
     public CreateTransactionResponseDto initTransaction(CreateTransactionRequestDto requestDto) {
-        accountService.checkAndBlockBalance(requestDto.getSender().getCif(), requestDto.getSenderRequisite().getIban(), requestDto.getCurrency(), requestDto.getAmount());
+        accountService.checkAndBlockBalance(requestDto.sender().cif(), requestDto.senderRequisite().iban(), requestDto.currency(), requestDto.amount());
         TransactionEntity transaction = mapper.toTransactionEntity(requestDto);
         repository.save(transaction);
         return new CreateTransactionResponseDto(transaction.getId());
