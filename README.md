@@ -2,7 +2,7 @@
 
 ## APIS:
 
-### <b>Transaction is a 2 step process: </b></br>
+### <b>Account transfer is a 2 step process: </b></br>
 #### <i><u>1. Initiate transaction: </u></i></br>
     - find sender account by cif, iban and currency
     - check if account is blocked for debit
